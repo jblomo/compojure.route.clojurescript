@@ -1,6 +1,7 @@
 (ns compojure.route.clojurescript
   (:use [ring.middleware.clojurescript :only (wrap-clojurescript)])
-  (:require [compojure.route :as route]))
+  (:require [compojure.route :as route])
+  (:import [java.io File]))
 
 (defn- trim-chars
   "Trims a set of characters 'chars' from the begining and end of a string."
@@ -19,6 +20,6 @@
   [path & [options]]
   (let [pure-path (trim-chars #{File/separatorChar} path)]
     (wrap-clojurescript (route/files path {:root pure-path})
-                        pure-path))
+                        pure-path)))
 
  
