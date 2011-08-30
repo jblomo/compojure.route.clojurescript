@@ -7,9 +7,9 @@ Provides a route that serves compiled ClojureScript.
 If your ClojureScript is in `cljs/src/` and your index.html refers to
 `/cljs/bootstrap.js`
 
-  (defroutes app
-    ...
-    (compiled-clojurescript "/cljs/"))
+    (defroutes app
+      ...
+      (compiled-clojurescript "/cljs/"))
 
 ClojureScript will be recompiled as needed.  By default, ClojureScript is
 compiled in dev mode, ie without optimizations.  For more advanced usage, see
