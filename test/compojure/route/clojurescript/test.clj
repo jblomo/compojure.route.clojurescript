@@ -29,7 +29,6 @@
     (is (= base-js body))))
 
 (deftest test-404
-  ; make sure we pass through missing files without Exceptions
   (let [{:keys [status headers body]}
          (app {:request-method :get :uri "/cljs/fake.js" :headers {}})]
     (is (= 404 status))
